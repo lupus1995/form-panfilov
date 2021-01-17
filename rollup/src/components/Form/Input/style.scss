@@ -1,0 +1,37 @@
+.input {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 56px;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.114286px;
+  color: #202020;
+  font: 500 16px 'Roboto';
+  width: 100%;
+
+  &::placeholder {
+    font-size: 16px;
+    line-height: 19;
+    letter-spacing: 0.114286px;
+    color: #b4b4b4;
+  }
+}
+
+.inputPadding {
+  padding: 18px;
+}
+
+.inputConteiner {
+  margin-bottom: 15px;
+  width: 100%;
+
+  .errorContainer {
+    margin-top: 10px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 25px;
+  }
+}
