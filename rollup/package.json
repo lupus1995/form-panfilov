@@ -1,6 +1,6 @@
 {
   "name": "form-panfilov",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "description": "web form",
   "main": "build/index.js",
   "module": "build/index.es.js",
