@@ -16,7 +16,6 @@ const FormWrapper: FC<{
 
   const renderChild = () => {
     return React.Children.map(children, (child: any, index) => {
-      console.log('form', form);
       const name = Object.keys(form[index])[0];
       const error = findError({ name });
       // console.log('error?.message[0]', error?.message[0]);

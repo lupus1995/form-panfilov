@@ -4,17 +4,22 @@ import './style.scss';
 import {
   Form,
   FormWrapper,
-  ErrorMessages,
   Input,
   KeyFormInterface,
-  MessageErrorForm,
   requiredInputRules,
   emailRules,
   lineLengthRules,
   Select,
+  checkPassword,
 } from 'form-panfilov';
 
 const defaultValue: KeyFormInterface[] = [
+  {
+    name: {
+      defaultValue: '',
+      defaultError: true,
+    },
+  },
   {
     email: {
       defaultValue: '',
@@ -23,6 +28,12 @@ const defaultValue: KeyFormInterface[] = [
   },
   {
     password: {
+      defaultValue: '',
+      defaultError: true,
+    },
+  },
+  {
+    repeatPassword: {
       defaultValue: '',
       defaultError: true,
     },
@@ -40,7 +51,7 @@ const options = [
   { value: 'dialog', label: 'Диалог' },
 ];
 
-const App = () => {
+const App = (): JSX.Element => {
   return (
     <Form
       data={defaultValue}
@@ -55,9 +66,15 @@ const App = () => {
           placeholder="Email"
           type="text"
         />
+        <Input rules={{ requiredInputRules }} placeholder="Name" type="text" />
         <Input
           rules={{ requiredInputRules, lineLengthRules }}
           placeholder="Password"
+          type="password"
+        />
+        <Input
+          rules={{ requiredInputRules, lineLengthRules, checkPassword }}
+          placeholder="Repeat password"
           type="password"
         />
         <Select

@@ -12,12 +12,14 @@ import SelectItemInterface from '../interfaces/SelectItemIntreface';
 const Select: FC<{
   name: string;
   isDisabled?: boolean;
+  isSearchable?: boolean;
   options: SelectItemInterface[];
   rules: RulesValidationInterface;
   defaultItemSelect?: SelectItemInterface | null;
 }> = ({
   name,
   isDisabled = false,
+  isSearchable = false,
   options,
   rules,
   defaultItemSelect = null,
@@ -55,11 +57,12 @@ const Select: FC<{
   }, [submit]);
 
   return (
-    <div className="selectContainer">
+    <div data-testid="select container" className="selectContainer">
       <ReactSelect
         name={name}
         clearable={false}
         className="input"
+        isSearchable={isSearchable}
         isDisabled={isDisabled}
         defaultValue={selectedOption}
         onChange={handleChange}

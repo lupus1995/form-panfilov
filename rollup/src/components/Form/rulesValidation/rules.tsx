@@ -7,7 +7,7 @@ export function lineLengthRules({
 }): RuleValidationInterface {
   return {
     rule: string.length < 2,
-    message: 'Длинна строки должна быть от 2 знаков.',
+    message: 'Длинна строки должна быть от 2 знаков',
   };
 }
 
@@ -18,7 +18,7 @@ export function requiredInputRules({
 }): RuleValidationInterface {
   return {
     rule: firstClickByInput,
-    message: 'Поле обязательно.',
+    message: 'Поле обязательно',
   };
 }
 
@@ -31,7 +31,7 @@ export function emailRules({
   const regex = new RegExp(expression);
   return {
     rule: !string.match(regex),
-    message: 'Не валидный email.',
+    message: 'Не валидный email',
   };
 }
 
@@ -44,6 +44,6 @@ export function checkPassword({
 }): RuleValidationInterface {
   return {
     rule: password !== repeatPassword,
-    message: 'Пароли не совпадают.',
+    message: 'Пароли не совпадают',
   };
 }

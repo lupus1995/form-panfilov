@@ -29,9 +29,7 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    // project: 'd:/работа/phishman/src/appbundle/frontend/tsconfig.json',
-    project: `${__dirname
-      }/tsconfig.json`,
+    project: `${__dirname}/tsconfig.json`,
     sourceType: 'module',
   },
   plugins: [

@@ -22,6 +22,8 @@ const Input: FC<{
   name?: string;
   defaultValue?: string;
   errorMessage?: string;
+  disabled?: boolean;
+  readonly?: boolean;
 }> = ({
   type = 'text',
   classNames = '',
@@ -30,10 +32,10 @@ const Input: FC<{
   name = '',
   defaultValue = '',
   errorMessage = '',
+  disabled = false,
+  readonly = false,
 }) => {
   const { fields, setFields, submit } = useContext(FormContext);
-  const typePassword = type === consts.typeInputPassword;
-  const [readonly, setReadonly] = useState<boolean>(typePassword);
   const [message, setMessage] = useState<string>(errorMessage);
   const [error, setError] = useState<boolean>(false);
   const input: MutableRefObject<HTMLInputElement | null> = useRef(null);
@@ -45,11 +47,6 @@ const Input: FC<{
     }
   }, [errorMessage]);
 
-  const handleFocus = () => {
-    if (typePassword && readonly) {
-      setReadonly(false);
-    }
-  };
   const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     const resultValidation = validation({
       value: e.target.value,
@@ -89,14 +86,15 @@ const Input: FC<{
   }, [submit]);
 
   return (
-    <div className="inputConteiner">
+    <div data-testid="wrapper input" className="inputConteiner">
       <input
+        data-testid={type === 'password' ? 'password' : ''}
         defaultValue={defaultValue}
         name={name}
         ref={input}
         type={type}
         readOnly={readonly}
-        onFocus={handleFocus}
+        disabled={disabled}
         className={`input inputPadding ${classNames}`}
         autoComplete="new-password"
         placeholder={placeholder}
@@ -104,7 +102,7 @@ const Input: FC<{
         onInput={handleInput}
       />
       {error && (
-        <div className="errorContainer">
+        <div data-testid="error message" className="errorContainer">
           <MessageErrorForm text={message} />
         </div>
       )}

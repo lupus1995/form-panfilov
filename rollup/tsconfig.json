@@ -18,7 +18,8 @@
     },
     "include": [
         "src/**/*",
-        "src/TestComponents"
+        "src/TestComponents",
+        "__tests__",
     ],
     "exclude": [
         "node_modules",
