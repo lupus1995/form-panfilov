@@ -20,6 +20,7 @@
         "src/**/*",
         "src/TestComponents",
         "__tests__",
+        "index.ts",
     ],
     "exclude": [
         "node_modules",

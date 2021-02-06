@@ -10,7 +10,7 @@ import {
   lineLengthRules,
   emailRules,
   checkPassword,
-} from '../src';
+} from '..';
 
 const simpleValue: KeyFormInterface[] = [
   {

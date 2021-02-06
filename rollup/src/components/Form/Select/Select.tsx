@@ -5,7 +5,7 @@ import {
   MessageErrorForm,
   RulesValidationInterface,
   validation,
-} from '../../..';
+} from '../../../..';
 import { FormContext } from '../Form';
 import SelectItemInterface from '../interfaces/SelectItemIntreface';
 

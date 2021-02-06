@@ -7,7 +7,7 @@ import {
   KeyFormInterface,
   Form,
   FormWrapper,
-} from '../src';
+} from '..';
 
 const simpleValue: KeyFormInterface[] = [
   {
